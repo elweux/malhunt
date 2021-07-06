@@ -219,23 +219,6 @@ def clamscan_artifact(imagefile, artifactfile):
 	clamOutput = clamOutput.split(":")[1].rstrip().lstrip()
 	return clamOutput.rstrip().lstrip()
 
-
-
-def banner_logo():
-	print """  __  __       _ _                 _   
- |  \/  |     | | |               | |  
- | \  / | __ _| | |__  _   _ _ __ | |_ 
- | |\/| |/ _` | | '_ \| | | | '_ \| __|
- | |  | | (_| | | | | | |_| | | | | |_ 
- |_|  |_|\__,_|_|_| |_|\__,_|_| |_|\__|
-                                       
-Hunt malware with Volatility!
-
-Andrea Fortuna
-andrea@andreafortuna.org
-https://www.andreafortuna.org
-"""
-
 def banner_usage():
 	print " Usage:"
 	print "	" + sys.argv[0] + " imagefile"
@@ -245,7 +228,6 @@ def check_env():
 		os.makedirs(MALHUNTHOME)
 
 def main():
-	banner_logo()
 	check_env()
 	if len(sys.argv) <2:
 		banner_usage()
