@@ -5,7 +5,7 @@ import os,shutil,sys,time, requests
 
 
 global MALHUNTHOME, VOLATILITYBIN, EXCLUDEDWORDS
-MALHUNTHOME = os.path.expanduser("~/.malhunt")
+MALHUNTHOME = os.path.expanduser(".malhunt")
 VOLATILITYBIN = os.popen("which volatility || which vol.py").read().rstrip()
 CLAMSCANBIN = os.popen("which clamscan").read().rstrip()
 EXCLUDEDWORDS = ['Str_Win32_', 'SurtrStrings']
@@ -292,7 +292,7 @@ def main():
 	else:
 		print "\033[92mNo artifacts found!\033[0m"
 
-	print "Full scan results saved in \033[4m" + MALHUNTHOME + "/"  + os.path.basename(imageFile) + ".malware_search\033[0m"
+	print "Full scan results saved in \033[4m" + os.path.realpath(MALHUNTHOME) + "/"  + os.path.basename(imageFile) + ".malware_search\033[0m"
 
 # Main body
 if __name__ == '__main__':
