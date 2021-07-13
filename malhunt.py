@@ -35,7 +35,7 @@ def clean_up():
 
 def get_rules_from_git():
 	clean_up()
-	os.system("git clone https://github.com/Yara-Rules/rules.git " + MALHUNTHOME + "/rules")
+	os.system("git clone -q https://github.com/Yara-Rules/rules.git " + MALHUNTHOME + "/rules")
 
 def list_yara_files():
 	all_yara_files = []
